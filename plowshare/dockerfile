@@ -16,7 +16,7 @@ RUN packages=' \
     curl \
     wget \
     make \
-    rar \
+    unrar \
   ' \
   set -x \
   && apk --update add $packages \
@@ -26,6 +26,9 @@ WORKDIR /opt/
 RUN git clone https://github.com/mcrapet/plowshare
 RUN cd plowshare && make install
 RUN plowmod --install
+
+ADD ./scripts /opt/scripts
+RUN ln -s /opt/scripts/Unrar /usr/bin/Unrar
 
 
 CMD ["sh"]

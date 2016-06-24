@@ -16,7 +16,8 @@ RUN echo 'export PATH=$PATH:/opt/apache-maven-3.0.5/bin' >> /etc/bashrc
 # Nodejs
 
 # Custom scripts
-ADD ./scripts /opt
+ADD ./scripts /opt/scripts
 
-
-
+# Other
+RUN echo 'alias wtf=history | grep ' >> /etc/bashrc
+RUN echo 'alias mci=mvn clean install -DskipTests' >> /etc/bashrc
