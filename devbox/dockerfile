@@ -1,0 +1,22 @@
+FROM centos:centos7
+MAINTAINER Chuyqa
+
+
+RUN yum update -y && yum clean all
+RUN yum install epel-release -y
+RUN yum install python-pip java-1.8.0-openjdk -y
+
+
+RUN echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.91-1.b14.el7_2.x86_64/jre/'
+
+# Maven 3.0.5 
+ADD ./dependencies/apache-maven-3.0.5 /opt/apache-maven-3.0.5
+RUN echo 'export PATH=$PATH:/opt/apache-maven-3.0.5/bin' >> /etc/bashrc
+
+# Nodejs
+
+# Custom scripts
+ADD ./scripts /opt
+
+
+
