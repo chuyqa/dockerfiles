@@ -36,7 +36,6 @@ RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 # Clone Ranger 
 WORKDIR /tmp
 RUN git clone https://github.com/apache/incubator-ranger
- 
-WORKDIR /tmp/incubator-ranger/
-RUN mvn clean
 
+WORKDIR /tmp/incubator-ranger/
+RUN mvn dependency:resolve
