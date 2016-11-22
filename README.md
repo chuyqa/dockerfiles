@@ -1,10 +1,10 @@
 # Toolbox
 
 
-``` 
+ 
 ### Development Environments
 
-1. *./ranger-env* 
+1. **ranger-env**
 Development environment with all installed pre-reqs for apache Ranger (Incubator)
 
 #### Usage
