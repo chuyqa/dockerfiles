@@ -1,12 +1,12 @@
 FROM centos:centos6
 
-MAINTAINER <Jesus Alvarez @Chuyqa>
+MAINTAINER Jesus Alvarez @Chuyqa
 
 RUN echo root:changeme | chpasswd
 
 # Build packages
 RUN yum clean all -y && yum update -y
-RUN yum -y install vim wget rpm-build sudo which tar openssh-server openssh-clients git python-setuptools python-devel glibc-common
+RUN yum -y install vim wget rpm-build which tar openssh-server openssh-clients git python-setuptools python-devel glibc-common
 
 ENV HOME /root
 
