@@ -2,9 +2,17 @@
 
 
 ``` 
-dockerbuilds
-1. Simple devbox dockerbuild 
-2. Plowshare 
+### Development Environments
 
-Utilities
-1. Ambari 
+1. *./ranger-env* 
+Development environment with all installed pre-reqs for apache Ranger (Incubator)
+
+#### Usage
+```
+docker build -t rangerdev ./ranger-env/
+docker run -itd --name=rdev rangderdev
+docker exec -it rdev bash
+
+
+```
+
