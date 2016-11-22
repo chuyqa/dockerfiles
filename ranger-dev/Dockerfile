@@ -1,6 +1,6 @@
-MAINTAINER <Jesus Alvarez @Chuyqa>
-
 FROM centos:centos6
+
+MAINTAINER <Jesus Alvarez @Chuyqa>
 
 RUN echo root:changeme | chpasswd
 
