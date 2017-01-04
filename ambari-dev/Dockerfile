@@ -39,7 +39,6 @@ RUN rm -rf /opt/maven/apache-maven-3.0.5-bin.tar.gz
 ENV M2_HOME /opt/maven/apache-maven-3.0.5
 ENV MAVEN_OPTS -Xmx2048m -XX:MaxPermSize=256m
 ENV PATH $PATH:$JAVA_HOME/bin:$M2_HOME/bin
-ADD files/settings.xml /root/.m2/settings.xml
 
 # SSH key
 RUN ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
@@ -63,7 +62,5 @@ RUN git clone https://github.com/apache/ambari.git
 WORKDIR /tmp/ambari
 RUN npm set registry https://registry.npmjs.org/
 
-# Useful env variables
-ENV mbb  mvn -B -X clean install package rpm:rpm -DskipTests -Dpython.ver="python >= 2.6" -Preplaceurl
 
-
+ADD scripts/entry.sh /tmp/entry.sh
