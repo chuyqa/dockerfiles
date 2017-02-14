@@ -22,9 +22,13 @@ RUN yum -y install vim wget sudo which tar openssh-clients ntp git httpd python-
 
 WORKDIR /tmp/
 RUN easy_install pip
-RUN pip install "git+https://github.com/jupyter/kernel_gateway_demos.git#egg=nb2kg&subdirectory=nb2kg"
+
+RUN pip install setuptools --upgrade
+RUN pip install "git+https://github.com/chuyqa/kernel_gateway_demos.git#egg=nb2kg&subdirectory=nb2kg"
+
 RUN jupyter serverextension enable --py nb2kg --sys-prefix 
 
 ADD scripts/launchnb.sh /tmp/launchnb.sh
 
-ENTRYPOINT /tmp/launchnb.sh
+CMD ["/tmp/launchnb.sh"]
+
