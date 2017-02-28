@@ -55,6 +55,7 @@ RUN yum -y install nodejs npm --enablerepo=epel
 RUN npm install -g npm@2.1.11
 RUN npm install -g brunch@1.7.20
 RUN npm set registry https://registry.npmjs.org/
+ENV PHANTOMJS_CDNURL http://cnpmjs.org/downloads
 
 # Once run some mvn commands to cache .m2/repository
 WORKDIR /tmp
