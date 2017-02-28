@@ -63,4 +63,4 @@ WORKDIR /tmp/ambari
 RUN npm set registry https://registry.npmjs.org/
 
 
-ADD scripts/entry.sh /tmp/entry.sh
+ADD scripts/build.sh /tmp/build.sh
